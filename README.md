@@ -1,4 +1,4 @@
 # progr
-b
-a
-nauja eilute
+b  
+a  
+nauja eilute  

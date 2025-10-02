@@ -1,9 +1,9 @@
 #include <iostream>
 using namespace std;
 int main() {
-    int pasirinkimas, valiuta;1
+    int pasirinkimas, valiuta;
     int pal, pir, par;
-    double eur, inr, usd, gbp;
+    double kiekis;
     double GBP_Bendras   = 0.8729;
     double GBP_Pirkti    = 0.8600;
     double GBP_Parduoti  = 0.9220;
@@ -16,44 +16,34 @@ int main() {
     cout << "1. Palyginti valiutas" << endl;
     cout << "2. Pirkti valiuta" << endl;
     cout << "3. Parduoti valiuta" << endl;
-    scanf("%d", &pasirinkimas);
+    cin >> pasirinkimas;
 
-    cout << "1.Eurai EUR" << endl;
-    cout << "2. Didziosios Britanijos svarai GBP" << endl;
-    cout << "3. Jungtiniu Amerikos valstiju doleriai USD" << endl;
-    cout << "4. Indijos rupijai INR" << endl;
-    scanf("%d", &valiuta);
 
-    switch (valiuta) {
-        case 1:
-            cout << "Ivesti EUR kieki: " << endl;
-            cin >> eur;
-            break;
-        case 2:
-            cout << "Ivesti GBP kieki: " << endl;
-            cin >> gbp;
-            break;
-        case 3:
-            cout << "Ivesti USD kieki: " << endl;
-            cin >> usd;
-        break;
-        case 4:
-            cout << "Ivesti INR kieki: " << endl;
-            cin >> inr;
-        break;
-        default:
-            cout << "Pasirinkimo nera" << endl;
-            exit(0);
-    }
     switch (pasirinkimas) {
         case 1:
-            cout << "1. Palyginti su EUR" << endl;
-            cout << "2. Palyginti su GBP" << endl;
-            cout << "3. Palyginti su USD" << endl;
-            cout << "4. Palyginti su INR" << endl;
-            scanf("%d", &pal);
-        switch(pal) {
-            
+            cout << "1. Eurai EUR" << endl;
+        cout << "2. Didziosios Britanijos svarai GBP" << endl;
+        cout << "3. Jungtiniu Amerikos valstiju doleriai USD" << endl;
+        cout << "4. Indijos rupijai INR" << endl;
+        cin >> valiuta;
+        cout << "Iveskite kieki: " << endl;
+        cin >> kiekis;
+
+        if (valiuta == 1) {
+            cout << "Palyginti su: " << endl;
+            cout << "1. Didziosios Britanijos Svarais GBP" << endl;
+            cout << "2. Jungtiniu Amerikos Valstiju Doleriais USD" << endl;
+            cout << "3. Indijos rupijais INR" << endl;
+            cin >> pal;
+            if (pal == 1) {
+                cout << kiekis << "EUR = " << kiekis * GBP_Bendras << "GBP" << endl;
+            } else if (pal == 2) {
+                cout << kiekis << "EUR = " << kiekis * USD_Bendras << "USD" << endl;
+            } else if (pal == 3) {
+                cout << kiekis << "EUR = " << kiekis * INR_Bendras << "INR" << endl;
+            }
+        } else if (valiuta == 2) {
+            cout << kiekis << "GBP = " << kiekis / GBP_Pirkti << "EUR" << endl;
         }
     }
     return 0;

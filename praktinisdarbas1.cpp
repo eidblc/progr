@@ -30,7 +30,7 @@ int main() {
         cin >> kiekis;
 
         if (valiuta == 1) {
-            cout << "Palyginti su: " << endl;
+            cout << "Palyginti su: " << endl; 
             cout << "1. Didziosios Britanijos Svarais GBP" << endl;
             cout << "2. Jungtiniu Amerikos Valstiju Doleriais USD" << endl;
             cout << "3. Indijos rupijais INR" << endl;

@@ -15,15 +15,16 @@ int main() {
     double INR_Bendras   = 104.6918;
     double INR_Pirkti    = 101.3862;
     double INR_Parduoti  = 107.8546;
-    cout << "1. Palyginti valiutas" << endl;
-    cout << "2. Pirkti valiuta" << endl;
-    cout << "3. Parduoti valiuta" << endl;
-    cin >> pasirinkimas;
+    while (pasirinkimas != 0) {
+        cout << "1. Palyginti valiutas" << endl;
+        cout << "2. Pirkti valiuta" << endl;
+        cout << "3. Parduoti valiuta" << endl;
+        cout << "0. Sustabdyti programa" << endl;
+        cin >> pasirinkimas;
 
-
-    switch (pasirinkimas) {
-        case 1:
-            cout << "1. Eurai EUR" << endl;
+        switch (pasirinkimas) {
+            case 1:
+                cout << "1. Eurai EUR" << endl;
             cout << "2. Didziosios Britanijos svarai GBP" << endl;
             cout << "3. Jungtiniu Amerikos valstiju doleriai USD" << endl;
             cout << "4. Indijos rupijai INR" << endl;
@@ -52,8 +53,8 @@ int main() {
                 cout << kiekis << "INR = " << fixed << setprecision(2) << kiekis / INR_Bendras << "EUR" << endl;
             }
             break;
-        case 2:
-            cout << "1. Didziosios Britanijos svarai GBP" << endl;
+            case 2:
+                cout << "1. Didziosios Britanijos svarai GBP" << endl;
             cout << "2. Jungtiniu Amerikos valstiju doleriai USD" << endl;
             cout << "3. Indijos rupijai INR" << endl;
             cin >> valiuta;
@@ -66,26 +67,23 @@ int main() {
             } else if (valiuta == 3) {
                 cout << "Uz " << kiekis << "EUR nupirkta: " << fixed << setprecision(2) << kiekis * INR_Pirkti << "INR" << endl;
                 break;
-        case 3:
-            cout << "1. Didziosios Britanijos svarai GBP" << endl;
-            cout << "2. Jungtiniu Amerikos valstiju doleriai USD" << endl;
-            cout << "3. Indijos rupijai INR" << endl;
-            cin >> valiuta;
-            cout << "Iveskite parduodama valiutos kieki: " << endl;
-            cin >> kiekis;
-            if (valiuta == 1) {
-                cout << "Parduota " << kiekis << "GBP uz: " << fixed << setprecision(2) << kiekis / GBP_Parduoti << "EUR" << endl;
-            } else if (valiuta == 2) {
-                cout << "Parduota " << kiekis << "USD uz: " << fixed << setprecision(2) << kiekis / USD_Parduoti << "EUR" << endl;
-            } else if (valiuta == 3) {
-                cout << "Parduota " << kiekis << "INR uz: " << fixed << setprecision(2) << kiekis / INR_Parduoti << "EUR" << endl;
+                case 3:
+                    cout << "1. Didziosios Britanijos svarai GBP" << endl;
+                cout << "2. Jungtiniu Amerikos valstiju doleriai USD" << endl;
+                cout << "3. Indijos rupijai INR" << endl;
+                cin >> valiuta;
+                cout << "Iveskite parduodama valiutos kieki: " << endl;
+                cin >> kiekis;
+                if (valiuta == 1) {
+                    cout << "Parduota " << kiekis << "GBP uz: " << fixed << setprecision(2) << kiekis / GBP_Parduoti << "EUR" << endl;
+                } else if (valiuta == 2) {
+                    cout << "Parduota " << kiekis << "USD uz: " << fixed << setprecision(2) << kiekis / USD_Parduoti << "EUR" << endl;
+                } else if (valiuta == 3) {
+                    cout << "Parduota " << kiekis << "INR uz: " << fixed << setprecision(2) << kiekis / INR_Parduoti << "EUR" << endl;
+                }
+                break;;
             }
-            break;
-            default:
-            cout << "Pasirinkimo nera." << endl;
-            break;
-            }
+        }
     }
-
     return 0;
 }

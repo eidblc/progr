@@ -1,11 +1,10 @@
 #include <iostream>
 #include <iomanip>
-#include <set>
-#include <pstl/algorithm_fwd.h>
+
 using namespace std;
 int main() {
     int pasirinkimas, valiuta;
-    int pal, pir, par;
+    int pal;
     double kiekis;
     double GBP_Bendras   = 0.8729;
     double GBP_Pirkti    = 0.8600;
@@ -67,24 +66,24 @@ int main() {
             } else if (valiuta == 3) {
                 cout << "Uz " << kiekis << "EUR nupirkta: " << fixed << setprecision(2) << kiekis * INR_Pirkti << "INR" << endl;
                 break;
-                case 3:
-                cout << "1. Didziosios Britanijos svarai GBP" << endl;
-                cout << "2. Jungtiniu Amerikos valstiju doleriai USD" << endl;
-                cout << "3. Indijos rupijai INR" << endl;
-                cin >> valiuta;
-                cout << "Iveskite parduodama valiutos kieki: " << endl;
-                cin >> kiekis;
-                if (valiuta == 1) {
-                    cout << "Parduota " << kiekis << "GBP uz: " << fixed << setprecision(2) << kiekis / GBP_Parduoti << "EUR" << endl;
-                } else if (valiuta == 2) {
-                    cout << "Parduota " << kiekis << "USD uz: " << fixed << setprecision(2) << kiekis / USD_Parduoti << "EUR" << endl;
-                } else if (valiuta == 3) {
-                    cout << "Parduota " << kiekis << "INR uz: " << fixed << setprecision(2) << kiekis / INR_Parduoti << "EUR" << endl;
-                }
-                break;
-                default:
-                cout << "Pasirinkimo nera." << endl;
-                break;
+        case 3:
+            cout << "1. Didziosios Britanijos svarai GBP" << endl;
+            cout << "2. Jungtiniu Amerikos valstiju doleriai USD" << endl;
+            cout << "3. Indijos rupijai INR" << endl;
+            cin >> valiuta;
+            cout << "Iveskite parduodama valiutos kieki: " << endl;
+            cin >> kiekis;
+            if (valiuta == 1) {
+                cout << "Parduota " << kiekis << "GBP uz: " << fixed << setprecision(2) << kiekis / GBP_Parduoti << "EUR" << endl;
+            } else if (valiuta == 2) {
+                cout << "Parduota " << kiekis << "USD uz: " << fixed << setprecision(2) << kiekis / USD_Parduoti << "EUR" << endl;
+            } else if (valiuta == 3) {
+                cout << "Parduota " << kiekis << "INR uz: " << fixed << setprecision(2) << kiekis / INR_Parduoti << "EUR" << endl;
+            }
+            break;
+            default:
+            cout << "Pasirinkimo nera." << endl;
+            break;
             }
     }
 

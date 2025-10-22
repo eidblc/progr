@@ -11,37 +11,36 @@ int main() {
     int pasirinkimas;
 
     while (pasirinkimas != 0) {
-        cout << "1. Prideti mokini ir jo pazymius";
-        cout << "2. Perziureti visu mokiniu pazymius";
-        cout << "3. Perziureti konkretaus mokinio pazymius";
-        cout << "4. Atnaujinti pazymi";
-        cout << "5. Pasalinti mokini";
-        cout << "0. Baigti";
+        cout << "1. Prideti mokini ir jo pazymius" << endl;
+        cout << "2. Perziureti visu mokiniu pazymius" << endl;
+        cout << "3. Perziureti konkretaus mokinio pazymius" << endl;
+        cout << "4. Atnaujinti pazymi" << endl;
+        cout << "5. Pasalinti mokini" << endl;
+        cout << "0. Baigti" << endl;
         cin >> pasirinkimas;
         switch (pasirinkimas) {
             case 1: {
                 if (mokiniukiekis >= MAXMOKINIAI) {
-                    cout << "Pasiektas maksimalus mokiniu skaicius";
-                    break;
+                    cout << "Pasiektas maksimalus mokiniu skaicius" << endl;
                 }
-                cout << "Iveskite mokinio varda: ";
+                cout << "Iveskite mokinio varda: " << endl;
                 cin >> vardai[mokiniukiekis];
-                cout << "Kiek pazymiu ivesti (iki 10): ";
+                cout << "Kiek pazymiu ivesti (iki 10): " << endl;
                 cin >> pazymiukiekis[mokiniukiekis];
                 for (int i = 0; i < pazymiukiekis[mokiniukiekis]; i++) {
-                    cout << "Pazymys " << i + 1 << ": ";
+                    cout << "Pazymys " << i + 1 << ": " << endl;
                     cin >> pazymiai[mokiniukiekis][i];
                 }
             }
-            break;
+
             mokiniukiekis++;
             cout << "Mokinys pridetas." << endl;
+            break;
             case 2: {
                 if (mokiniukiekis == 0) {
-                    cout << "Mokiniu sarasas tuscias.";
-                    break;
+                    cout << "Mokiniu sarasas tuscias." << endl;
                 }
-                cout << "Visi mokiniai";
+                cout << "Visi mokiniai" << endl;
                 for (int i = 0; i < mokiniukiekis; i++) {
                     cout << vardai[i] << " ";
                     for (int j = 0; j < pazymiukiekis[i]; j++) {
@@ -51,7 +50,47 @@ int main() {
                 }
                 break;
             }
-
+            case 3: {
+                if (mokiniukiekis == 0) {
+                    cout << "Mokiniu sarasas tuscias." << endl;
+                }
+                string paieska;
+                cout << "Iveskite mokinio varda: " << endl;
+                cin >> paieska;
+                for (int i = 0; i < mokiniukiekis; i++) {
+                    if (vardai[i] == paieska) {
+                        cout << vardai[i] << " pazymiai: " << endl;
+                        for (int j = 0; j < pazymiukiekis[i]; j++) {
+                            cout << pazymiai[i][j] << " ";
+                        } cout << endl;
+                    }
+                }
+            break;
+            }
+            case 4: {
+                if (mokiniukiekis == 0) {
+                    cout << "Mokiniu sarasas tuscias." << endl;
+                }
+                string paieska;
+                cout << "Iveskite mokinio varda: " << endl;
+                cin >> paieska;
+                for (int i = 0; i < mokiniukiekis; i++) {
+                    if (vardai[i] == paieska) {
+                        cout << vardai[i] << " pazymiu kiekis: " << pazymiukiekis[i] << endl;
+                        for (int j = 0; j < pazymiukiekis[i]; j++) {
+                            cout << j + 1 << ". " << pazymiai[i][j] << endl;
+                        }
+                    }
+                    int numeris;
+                    cout << "Kuri pazymi pakeisti (1-" << pazymiukiekis[i] << "): " << endl;
+                    cin >> numeris;
+                    cout << "Iveskite nauja pazymi: " << endl;
+                    cin >> pazymiai[i][numeris - 1];
+                    cout << "Pazymys atnaujintas" << endl;
+                    break;
+                }
+            break;
+            }
         }
     }
     return 0;

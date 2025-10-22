@@ -91,8 +91,32 @@ int main() {
                 }
             break;
             }
+            case 5: {
+                string vardas;
+                cout << "Iveskite mokini kuri norite pasalinti: " << endl;
+                cin >> vardas;
+                for (int i = 0; i < mokiniukiekis; i++) {
+                    for (int k = i; k < mokiniukiekis - 1; k++) {
+                        vardai[k] = vardai[k + 1];
+                        pazymiukiekis[k] = pazymiukiekis[k + 1];
+                        for (int j = 0; j < MAXPAZYMIAI; j++) {
+                            pazymiai[k][j] = pazymiai[k + 1][j];
+                        }
+                    }
+                    mokiniukiekis--;
+                    cout << "Mokinys pasalintas" << endl;
+                    break;
+                }
+            }
+                break;
+            case 0: {
+                cout << "Programa baigia darba" << endl;
+                break;
+            }
+            default: {
+                cout << "Pasirinkimo nera" << endl;
+            }
         }
     }
     return 0;
 }
-

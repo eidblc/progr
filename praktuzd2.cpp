@@ -3,7 +3,7 @@
 using namespace std;
 int main() {
     const int MAXPAZYMIAI = 10;
-    const int MAXMOKINIAI = 100;
+    const int MAXMOKINIAI = 2;
     string vardai[MAXMOKINIAI];
     int pazymiai[MAXMOKINIAI][MAXPAZYMIAI];
     int pazymiukiekis[MAXMOKINIAI];
@@ -22,7 +22,9 @@ int main() {
             case 1: {
                 if (mokiniukiekis >= MAXMOKINIAI) {
                     cout << "Pasiektas maksimalus mokiniu skaicius" << endl;
+                    break;
                 }
+                else
                 cout << "Iveskite mokinio varda: " << endl;
                 cin >> vardai[mokiniukiekis];
                 cout << "Kiek pazymiu ivesti (iki 10): " << endl;
@@ -40,6 +42,7 @@ int main() {
                 if (mokiniukiekis == 0) {
                     cout << "Mokiniu sarasas tuscias." << endl;
                 }
+
                 cout << "Visi mokiniai" << endl;
                 for (int i = 0; i < mokiniukiekis; i++) {
                     cout << vardai[i] << " ";

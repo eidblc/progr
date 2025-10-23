@@ -3,7 +3,7 @@
 using namespace std;
 int main() {
     const int MAXPAZYMIAI = 10;
-    const int MAXMOKINIAI = 2;
+    const int MAXMOKINIAI = 100;
     string vardai[MAXMOKINIAI];
     int pazymiai[MAXMOKINIAI][MAXPAZYMIAI];
     int pazymiukiekis[MAXMOKINIAI];

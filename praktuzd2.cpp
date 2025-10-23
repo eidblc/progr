@@ -24,11 +24,16 @@ int main() {
                     cout << "Pasiektas maksimalus mokiniu skaicius" << endl;
                     break;
                 }
-                else
+
+
                 cout << "Iveskite mokinio varda: " << endl;
                 cin >> vardai[mokiniukiekis];
                 cout << "Kiek pazymiu ivesti (iki 10): " << endl;
                 cin >> pazymiukiekis[mokiniukiekis];
+                if (pazymiukiekis[mokiniukiekis] > MAXPAZYMIAI) {
+                    cout << "Per didelis pazymiu kiekis" << endl;
+                    break;
+                }
                 for (int i = 0; i < pazymiukiekis[mokiniukiekis]; i++) {
                     cout << "Pazymys " << i + 1 << ": " << endl;
                     cin >> pazymiai[mokiniukiekis][i];

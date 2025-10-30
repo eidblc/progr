@@ -38,11 +38,12 @@ int main() {
                     cout << "Pazymys " << i + 1 << ": " << endl;
                     cin >> pazymiai[mokiniukiekis][i];
                 }
-            }
 
-            mokiniukiekis++;
-            cout << "Mokinys pridetas." << endl;
-            break;
+
+                mokiniukiekis++;
+                cout << "Mokinys pridetas." << endl;
+                break;
+            }
             case 2: {
                 if (mokiniukiekis == 0) {
                     cout << "Mokiniu sarasas tuscias." << endl;
@@ -89,14 +90,15 @@ int main() {
                         for (int j = 0; j < pazymiukiekis[i]; j++) {
                             cout << j + 1 << ". " << pazymiai[i][j] << endl;
                         }
+
+                        int numeris;
+                        cout << "Kuri pazymi pakeisti (1-" << pazymiukiekis[i] << "): " << endl;
+                        cin >> numeris;
+                        cout << "Iveskite nauja pazymi: " << endl;
+                        cin >> pazymiai[i][numeris - 1];
+                        cout << "Pazymys atnaujintas" << endl;
+                        break;
                     }
-                    int numeris;
-                    cout << "Kuri pazymi pakeisti (1-" << pazymiukiekis[i] << "): " << endl;
-                    cin >> numeris;
-                    cout << "Iveskite nauja pazymi: " << endl;
-                    cin >> pazymiai[i][numeris - 1];
-                    cout << "Pazymys atnaujintas" << endl;
-                    break;
                 }
                 break;
             }
@@ -119,6 +121,7 @@ int main() {
                     }
                 }
                 break;
+            }
                 case 0: {
                     cout << "Programa baigia darba" << endl;
                     break;
@@ -130,4 +133,3 @@ int main() {
         }
         return 0;
     }
-}

@@ -2,8 +2,8 @@
 #include <string>
 using namespace std;
 int main() {
-    const int MAXPAZYMIAI = 10;
-    const int MAXMOKINIAI = 100;
+    const int MAXPAZYMIAI = 3;
+    const int MAXMOKINIAI = 3;
     string vardai[MAXMOKINIAI];
     int pazymiai[MAXMOKINIAI][MAXPAZYMIAI];
     int pazymiukiekis[MAXMOKINIAI];
@@ -46,6 +46,7 @@ int main() {
             case 2: {
                 if (mokiniukiekis == 0) {
                     cout << "Mokiniu sarasas tuscias." << endl;
+                    break;
                 }
 
                 cout << "Visi mokiniai" << endl;
@@ -73,7 +74,7 @@ int main() {
                         } cout << endl;
                     }
                 }
-            break;
+                break;
             }
             case 4: {
                 if (mokiniukiekis == 0) {
@@ -97,34 +98,36 @@ int main() {
                     cout << "Pazymys atnaujintas" << endl;
                     break;
                 }
-            break;
+                break;
             }
             case 5: {
                 string vardas;
                 cout << "Iveskite mokini kuri norite pasalinti: " << endl;
                 cin >> vardas;
                 for (int i = 0; i < mokiniukiekis; i++) {
-                    for (int k = i; k < mokiniukiekis - 1; k++) {
-                        vardai[k] = vardai[k + 1];
-                        pazymiukiekis[k] = pazymiukiekis[k + 1];
-                        for (int j = 0; j < MAXPAZYMIAI; j++) {
-                            pazymiai[k][j] = pazymiai[k + 1][j];
+                    if (vardai[i] == vardas) {
+                        for (int k = i; k < mokiniukiekis - 1; k++) {
+                            vardai[k] = vardai[k + 1];
+                            pazymiukiekis[k] = pazymiukiekis[k + 1];
+                            for (int j = 0; j < MAXPAZYMIAI; j++) {
+                                pazymiai[k][j] = pazymiai[k + 1][j];
+                            }
                         }
+                        mokiniukiekis--;
+                        cout << "Mokinys pasalintas" << endl;
+                        break;
                     }
-                    mokiniukiekis--;
-                    cout << "Mokinys pasalintas" << endl;
+                }
+                break;
+                case 0: {
+                    cout << "Programa baigia darba" << endl;
                     break;
                 }
-            }
-                break;
-            case 0: {
-                cout << "Programa baigia darba" << endl;
-                break;
-            }
-            default: {
-                cout << "Pasirinkimo nera" << endl;
+                default: {
+                    cout << "Pasirinkimo nera" << endl;
+                }
             }
         }
+        return 0;
     }
-    return 0;
 }

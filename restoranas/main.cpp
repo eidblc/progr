@@ -75,6 +75,7 @@ int main() {
     out << "Sveiki atvyke i restorana " << endl << endl;
     for (int i = 0; i < menuCount; i++) {
         if (kiekiai[i] > 0) {
+            double eilutesSuma = kiekiai[i] * menuList[i].menuPrice;
             suma = suma + (kiekiai[i] * menuList[i].menuPrice);
             cout << setw(2) << kiekiai[i] << "  "
                  << left << setw(35) << menuList[i].menuItem

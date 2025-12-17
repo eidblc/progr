@@ -87,12 +87,12 @@ double printCheck(menuItemType menuList[], int menuCount, int kiekiai[]) {
     double galutine = suma + pvm;
 
     cout << endl;
-    cout << left << setw(38) << "Mokesciai (21%)" << right << setw(6) << pvm << " EUR" << endl;
-    cout << left << setw(38) << "Galutine suma"   << right << setw(6) << galutine << " EUR" << endl;
+    cout << left << setw(39) << "Mokesciai (21%)" << right << setw(6) << pvm << " EUR" << endl;
+    cout << left << setw(39) << "Galutine suma"   << right << setw(6) << galutine << " EUR" << endl;
 
     out << endl;
-    out << left << setw(38) << "Mokesciai (21%)" << right << setw(6) << pvm << " EUR" << endl;
-    out << left << setw(38) << "Galutine suma"   << right << setw(6) << galutine << " EUR" << endl;
+    out << left << setw(39) << "Mokesciai (21%)" << right << setw(6) << pvm << " EUR" << endl;
+    out << left << setw(39) << "Galutine suma"   << right << setw(6) << galutine << " EUR" << endl;
 
     out.close();
     cout << endl;
@@ -104,7 +104,7 @@ double printCheck(menuItemType menuList[], int menuCount, int kiekiai[]) {
 int main() {
     cout << fixed << setprecision(2);
 
-    const int MAX = 50;
+    constexpr int MAX = 50;
     menuItemType menuList[MAX];
     int kiekiai[MAX];
 
@@ -120,7 +120,7 @@ int main() {
     int pasirinkimas = -1;
 
     while (pasirinkimas != 0) {
-        cout << "Patiekalo numeris: ";
+        cout << "Patiekalo numeris (0 - baigti): ";
         cin >> pasirinkimas;
 
         if (pasirinkimas == 0) break;

@@ -1,3 +1,0 @@
-C:/Users/e/CLionProjects/restoranas/cmake-build-debug/CMakeFiles/restoranas.dir
-C:/Users/e/CLionProjects/restoranas/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/e/CLionProjects/restoranas/cmake-build-debug/CMakeFiles/rebuild_cache.dir

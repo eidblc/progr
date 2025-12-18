@@ -1,0 +1,3 @@
+C:/Users/s062655/Desktop/prdarbas4/cmake-build-debug/CMakeFiles/prdarbas4.dir
+C:/Users/s062655/Desktop/prdarbas4/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/s062655/Desktop/prdarbas4/cmake-build-debug/CMakeFiles/rebuild_cache.dir

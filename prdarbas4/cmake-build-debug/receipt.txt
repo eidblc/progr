@@ -1,0 +1,9 @@
+Sveiki atvyke i restorana
+
+ 1  Kiausiniene                          1.45 EUR
+ 1  Keksiukas su vysnia                  0.99 EUR
+ 2  Pusryciu dribsniai                   1.38 EUR
+ 2  Kava                                 1.00 EUR
+
+Mokesciai (21%)                          1.01 EUR
+Galutine suma                            5.83 EUR

@@ -13,7 +13,7 @@ struct menuItemType {
 int getData(menuItemType menuList[], int maxSize) {
     ifstream in("menu.txt");
     if (!in) {
-        cout << "Nepavyko atidaryti menu failo" << endl;
+        cout << "Nepavyko atidaryti meniu failo" << endl;
         return 0;
     }
 
@@ -52,7 +52,7 @@ int showMenu(menuItemType menuList[], int menuCount) {
     return 0;
 }
 
-double printCheck(menuItemType menuList[], int menuCount, int kiekiai[]) {
+double printCheck(menuItemType menuList[], int menuCount, int kiekis[]) {
     ofstream out("receipt.txt");
     if (!out) {
         cout << "Klaida su receipt.txt" << endl;
@@ -69,15 +69,15 @@ double printCheck(menuItemType menuList[], int menuCount, int kiekiai[]) {
     out << "Sveiki atvyke i restorana" << endl << endl;
 
     for (int i = 0; i < menuCount; i++) {
-        if (kiekiai[i] > 0) {
-            double eilutesSuma = kiekiai[i] * menuList[i].menuPrice;
+        if (kiekis[i] > 0) {
+            double eilutesSuma = kiekis[i] * menuList[i].menuPrice;
             suma = suma + eilutesSuma;
 
-            cout << setw(2) << kiekiai[i] << "  "
+            cout << setw(2) << kiekis[i] << "  "
                  << left << setw(35) << menuList[i].menuItem
                  << right << setw(6) << eilutesSuma << " EUR" << endl;
 
-            out << setw(2) << kiekiai[i] << "  "
+            out << setw(2) << kiekis[i] << "  "
                 << left << setw(35) << menuList[i].menuItem
                 << right << setw(6) << eilutesSuma << " EUR" << endl;
         }
@@ -106,13 +106,13 @@ int main() {
 
     constexpr int MAX = 50;
     menuItemType menuList[MAX];
-    int kiekiai[MAX];
+    int kiekis[MAX];
 
     int menuCount = getData(menuList, MAX);
     if (menuCount == 0) return 0;
 
     for (int i = 0; i < menuCount; i++) {
-        kiekiai[i] = 0;
+        kiekis[i] = 0;
     }
 
     showMenu(menuList, menuCount);
@@ -129,19 +129,15 @@ int main() {
             cout << "Tokio pasirinkimo nera" << endl;
         } else {
             int porcijos;
-            cout << "Porciju kiekis: ";
+            cout << "Porciju kiekis: " << endl;
             cin >> porcijos;
-
-            if (porcijos <= 0) {
-                cout << "Porciju kiekis turi buti teigiamas" << endl;
-            } else {
-                kiekiai[pasirinkimas - 1] = kiekiai[pasirinkimas - 1] + porcijos;
-                cout << "Prideta." << endl;
+            kiekis[pasirinkimas - 1] = kiekis[pasirinkimas - 1] + porcijos;
+            cout << "Prideta." << endl;
             }
         }
-    }
 
-    printCheck(menuList, menuCount, kiekiai);
+
+    printCheck(menuList, menuCount, kiekis);
 
     return 0;
 }

@@ -1,0 +1,5 @@
+Studento ID    Taskai    Procentai   Pazymys   
+S1             40        100.0       10
+S2             33        82.5        8
+S3             20        50.0        5
+S4             4         10.0        1
